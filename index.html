@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>File Input Capture Test</title>
+        <style>
+            body {
+                font-size: large;
+            }
+            .inputfile {
+                width: 0.1px;
+                height: 0.1px;
+                opacity: 0;
+                overflow: hidden;
+                position: absolute;
+                z-index: -1;
+            }
+            .inputfile + label {
+                font-size: 1em;
+                font-weight: 700;
+                color: white;
+                background-color: #555555;;
+                display: inline-block;
+                cursor: pointer; /* "hand" cursor */
+                padding: 15px 32px;
+                border-radius: 8px;
+            }
+
+            .inputfile:focus + label,
+            .inputfile + label:hover {
+                background-color: red;
+            }            
+            .inputfile:focus + label {
+                outline: 1px dotted #000;
+                outline: -webkit-focus-ring-color auto 5px;
+            }            
+        </style>
+    </head>
+    <body>
+        <p>Test of HTML file input capture (camera) support. Tap each button to trigger the input.</p>
+        <form action="upload.php" method="POST" enctype="multipart/form-data">
+            <div class="group">
+                <p>Capture-Based Inputs:</p>
+                <input type="file" class="inputfile" name="captureimage" id="captureimage" accept="image/*" capture>
+                <label for="captureimage">Image</label>
+                <input type="file" class="inputfile" name="capturevideo" id="capturevideo" accept="video/*" capture>
+                <label for="capturevideo">Video</label>
+                <input type="file" class="inputfile" name="captureaudio" id="captureaudio" accept="audio/*" capture>
+                <label for="captureaudio">Audio</label>
+            </div>
+            <div class="group">
+                    <p>Regular File Inputs:</p>
+                    <input type="file" class="inputfile" name="image" id="image" accept="image/*">
+                    <label for="image">Image</label>
+                    <input type="file" class="inputfile" name="video" id="video" accept="video/*">
+                    <label for="video">Video</label>
+                    <input type="file" class="inputfile" name="audio" id="audio" accept="audio/*">
+                    <label for="audio">Audio</label>
+                </div>
+            </form>
+    </body>
+</html>
