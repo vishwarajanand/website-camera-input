@@ -9,3 +9,7 @@ Site is published at https://vishwarajanand.github.io/website-camera-input/
 # Preview
 
 ![Preview](https://github.com/vishwarajanand/website-camera-input/blob/master/demo.png?raw=true "Preview")
+
+# Blog
+
+https://vishwarajanand.com/business/released-camera-input-checker-website/
